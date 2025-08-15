@@ -8,9 +8,9 @@ Salut ! Je suis **Dan Lwamba**, un passionné d’informatique, développeur web
 
 ## 🧠 À propos de moi
 
-- 🔹 **Âge :** 20 ans  
+- 🔹 **Âge :** tu connais déja 👍🏼  
 - 🔹 **Localisation :** Kinshasa, RDC  
-- 🔹 **Formation :** L1 Informatique à la FASI (UPC)  
+- 🔹 **Formation :** L2 Informatique à la FASI (UPC)  
 - 🔹 **Passion :** Développement d’applications intelligentes, data science, projets innovants.  
 - 🔹 **Devise personnelle :** "Je suis un homme qui a décidé de devenir lumière dans un monde brisé." 🌟  
 
