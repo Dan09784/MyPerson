@@ -8,7 +8,7 @@ Salut ! Je suis **Dan Lwamba**, passionné de tech, créateur de solutions **int
 
 ## 🧠 À propos de moi
 
-- 🔹 **Âge :** 20 ans  
+- 🔹 **Âge :** tu connais déja 👍🏼 
 - 🔹 **Localisation :** Kinshasa, RDC  
 - 🔹 **Formation :** L1 Informatique à la FASI (UPC)  
 - 🔹 **Devise personnelle :** "Je suis un homme qui a décidé de devenir lumière dans un monde brisé." 🌟  
@@ -107,8 +107,7 @@ Chaque projet que je crée vise à améliorer la vie des gens. Je rêve de **lum
 
 > « La lumière ne se cache pas, elle guide ceux qui osent avancer. » – Dan Lwamba ✨  
 
-![Footer](https://media.giphy.com/media/l0HlOvJ7yaacpuSas/giphy.gif)
-
+!
 ---
 
-![Visitor Badge](https://visitor-badge.laobi.icu/badge?page_id=DanLwamba.portfolio&style=for-the-badge)
+
