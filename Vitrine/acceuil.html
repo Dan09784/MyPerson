@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="refresh" content=>
+<title>Dan Lwamba — Portfolio Unique</title>
+<meta name="description" content="Portfolio de Dan Lwamba — Web, Flutter, Data, projets à impact." />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --bg: #081018;
+  --bg-alt: #0c1117;
+  --surface:#0f1622;
+  --text:#e8eef7;
+  --muted:#90a0b8;
+  --line:#1b2a3c;
+  --brand-a:#14b8a6;
+  --brand-b:#60a5fa;
+  --accent:#22d3ee;
+  --radius:14px;
+  --shadow: 0 20px 50px rgba(0,0,0,.45);
+}
+:root.light{
+  --bg:#f6f9ff; --bg-alt:#ffffff; --surface:#ffffff; --text:#071026; --muted:#5b677c; --line:#e6eef7;
+  --brand-a:#0ea5e9; --brand-b:#22c55e; --accent:#2563eb;
+  --shadow: 0 14px 30px rgba(10,20,40,.06);
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial;
+  background:
+    radial-gradient(900px 400px at 10% -10%, rgba(20,184,166,.08), transparent 40%),
+    radial-gradient(700px 300px at 110% 10%, rgba(96,165,250,.04), transparent 40%),
+    var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+  scroll-behavior:smooth;
+}
+
+/* HEADER */
+.header{
+  position:sticky; top:0; z-index:60;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:12px 20px; gap:12px;
+  backdrop-filter:saturate(180%) blur(8px);
+  background:color-mix(in srgb, var(--bg-alt) 85%, transparent);
+  border-bottom:1px solid var(--line);
+}
+#ppp :hover{
+  filter: drop-shadow(2px 3px 22px rgb(231, 122, 240));
+
+}
+.logo{font-weight:800; letter-spacing:.4px}
+.logo .grad{background:linear-gradient(90deg,var(--brand-a),var(--brand-b)); -webkit-background-clip:text; background-clip:text; color:transparent}
+.nav{display:flex; gap:14px; align-items:center}
+.nav a{color:var(--muted); text-decoration:none; font-weight:600; padding:8px; border-radius:8px}
+.nav a:hover{color:var(--text); background:transparent}
+.theme-btn{border:1px solid var(--line); background:transparent; color:var(--text); padding:8px 10px; border-radius:999px; cursor:pointer}
+
+/* HERO */
+.container{max-width:1150px; margin:0 auto; padding:28px 20px}
+.hero{display:grid; grid-template-columns:1.1fr .9fr; gap:36px; align-items:center; padding:44px 0}
+.badge{display:inline-block; padding:6px 12px; border-radius:999px; border:1px solid var(--line); color:var(--muted); background:color-mix(in srgb,var(--surface) 80%,transparent); font-weight:700}
+.title{font-size:clamp(28px,4.6vw,52px); line-height:1.02; margin:12px 0}
+.title .grad{background:linear-gradient(90deg,var(--brand-a),var(--brand-b)); -webkit-background-clip:text; background-clip:text; color:transparent}
+.subtitle{color:var(--muted); margin-bottom:14px}
+
+/* CTAs */
+.cta{display:flex; gap:12px; flex-wrap:wrap}
+.btn{padding:12px 16px; border-radius:12px; border:1px solid var(--line); font-weight:700; cursor:pointer; text-decoration:none; display:inline-flex; align-items:center; gap:8px}
+.btn.primary{background:linear-gradient(90deg,var(--brand-a),var(--brand-b)); color:#042026; border:none; box-shadow:var(--shadow)}
+.btn.ghost{background:transparent; color:var(--text)}
+
+/* Widgets (Stoic + Verset) */
+.widgets{display:flex; gap:12px; margin-top:18px; flex-wrap:wrap}
+.widget{flex:1 1 180px; background:var(--surface); border:1px solid var(--line); padding:12px; border-radius:12px}
+.widget h4{margin:0 0 6px 0}
+.widget p{margin:6px 0; color:var(--text)}
+
+/* RIGHT VISUAL */
+.deck{position:relative; display:flex; gap:12px; justify-content:center}
+.card{width:220px; border-radius:16px; overflow:hidden; border:1px solid var(--line); background:linear-gradient(180deg, color-mix(in srgb,var(--surface) 80%, transparent), transparent); box-shadow:var(--shadow); transform-style:preserve-3d}
+.card img{display:block; width:100%; height:150px; object-fit:cover}
+
+/* RIBBON */
+.ribbon{overflow:hidden; border-top:1px solid var(--line); border-bottom:1px solid var(--line); margin:18px 0}
+.ribbon .track{display:flex; gap:36px; white-space:nowrap; padding:10px 0; animation:marq 26s linear infinite}
+.ribbon span{color:var(--muted); font-weight:800; letter-spacing:.6px}
+@keyframes marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* SECTIONS */
+.section{padding:56px 0}
+.section-head{display:flex; align-items:end; justify-content:space-between; gap:12px; margin-bottom:20px}
+.section h2{margin:0; font-size:clamp(20px,3.6vw,34px)}
+.section p{color:var(--muted)}
+
+/* PROJECTS GRID */
+.projects{display:grid; grid-template-columns:repeat(12,1fr); gap:18px}
+.project{grid-column:span 6; background:var(--surface); border:1px solid var(--line); border-radius:12px; overflow:hidden; transition:transform .22s ease, box-shadow .22s ease}
+.project:hover{transform:translateY(-6px); box-shadow:0 18px 44px rgba(0,0,0,.35)}
+.project .thumb{height:180px; overflow:hidden}
+.project .thumb img{width:100%; height:100%; object-fit:cover}
+.project .meta{padding:12px}
+.tags{display:flex; gap:8px; flex-wrap:wrap; margin-top:8px}
+.tags span{padding:6px 8px; border-radius:999px; border:1px solid var(--line); color:var(--muted); font-size:12px}
+
+/* SKILLS */
+.skills{display:grid; grid-template-columns:repeat(12,1fr); gap:12px}
+.skill{grid-column:span 3; padding:12px; background:linear-gradient(180deg, color-mix(in srgb,var(--surface) 90%, transparent), transparent); border:1px solid var(--line); border-radius:10px; text-align:center; font-weight:700}
+
+/* LAB CARDS */
+.lab-grid{display:grid; grid-template-columns:repeat(12,1fr); gap:12px}
+.lab{grid-column:span 4; padding:14px; background:var(--surface); border:1px solid var(--line); border-radius:12px}
+
+/* TESTIMONIALS */
+.testimonials{display:flex; gap:12px; flex-wrap:wrap}
+.tcard{flex:1 1 300px; padding:14px; background:var(--surface); border:1px solid var(--line); border-radius:12px}
+
+/* CONTACT */
+.contact-form{display:flex; flex-direction:column; gap:12px; max-width:760px}
+.row{display:flex; gap:10px; flex-wrap:wrap}
+.input, textarea{flex:1 1 260px; padding:12px; border-radius:10px; border:1px solid var(--line); background:transparent; color:var(--text)}
+textarea{min-height:140px; resize:vertical}
+.form-actions{display:flex; gap:12px; align-items:center}
+
+/* FOOTER */
+.footer{padding:18px 0; border-top:1px solid var(--line); color:var(--muted); display:flex; justify-content:space-between; align-items:center}
+
+/* INTERACTIONS & EFFECTS */
+.reveal{opacity:0; transform:translateY(14px); transition:opacity .8s cubic-bezier(.2,.8,.2,1), transform .8s cubic-bezier(.2,.8,.2,1)}
+.reveal.visible{opacity:1; transform:none}
+.tilt{will-change:transform; transition:transform .12s linear}
+.magnet{transition:transform .12s linear}
+.elev{box-shadow:0 10px 30px rgba(0,0,0,.2)}
+
+/* RESPONSIVE */
+@media (max-width:1000px){
+  .hero{grid-template-columns:1fr; gap:20px}
+  .project{grid-column:span 12}
+  .skill{grid-column:span 6}
+  .lab{grid-column:span 12}
+  .deck{justify-content:flex-start}
+  .widgets{flex-direction:column}
+}
+@media (max-width:560px){
+  .logo{font-size:16px}
+  .nav{display:none}
+  .badge{display:inline-block}
+}
+</style>
+</head>
+<body>
+  <header class="header" role="banner">
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+      <div style="display:flex;align-items:center;gap:12px">
+        <div class="logo"><span class="logo-spark">✦</span> Dan <span class="grad">Lwamba</span></div>
+        <div class="badge" style="font-weight:700">Kinshasa · RDC</div>
+      </div>
+      <nav class="nav" role="navigation" aria-label="Navigation principale">
+        <a href="#projets">Projets</a>
+        <a href="#competences">Compétences</a>
+        <a href="#lab">Lab</a>
+        <a href="#temoignages">Témoignages</a>
+        <a href="#contact">Contact</a>
+        <button id="themeToggle" class="theme-btn" aria-label="Changer de thème">☾</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <!-- HERO -->
+      <section class="hero" aria-label="Introduction">
+        <div>
+          <div class="badge">Disponible pour missions freelance</div>
+          <h1 class="title">Je construis des <span class="grad">produits</span>, des interfaces <span style="text-decoration:underline">élégantes</span> et des expériences <span style="color:var(--accent)">mémorables</span>.</h1>
+          <p class="subtitle">Développeur Web & Mobile • Apprenti Data Scientist • Créateur — <em>« Je suis un homme qui a décidé de devenir lumière dans un monde brisé. »</em></p>
+          <div class="cta">
+            <a href="#projets" class="btn primary magnet">Voir mes projets</a>
+            <a href="#contact" class="btn ghost magnet">Travaillons ensemble</a>
+          </div>
+
+          <div class="widgets">
+            <div class="widget" id="stoicWidget" aria-live="polite">
+              <h4>💭 Pensée stoïque</h4>
+              <p class="w-body">...</p>
+              <small class="w-meta"></small>
+            </div>
+            <div class="widget" id="verseWidget" aria-live="polite">
+              <h4>📖 Verset</h4>
+              <p class="w-body">...</p>
+              <small class="w-meta"></small>
+            </div>
+          </div>
+        </div>
+
+        <aside class="deck" aria-hidden="true">
+          <div class="card tilt" style="transform:translateZ(12px)"><img src="code_8750790.png" alt="code"/></div>
+          <div class="card tilt" style="transform:translateZ(6px)"><img src="IMG-20250125-WA0030.jpg" alt="mobile"/></div>
+          <div class="card tilt"><img src="pexels-ron-lach-9783812.jpg" alt="design"/></div>
+        </aside>
+      </section>
+
+      <!-- RIBBON -->
+      <div class="ribbon" aria-hidden="true"><div class="track"><span>Performance</span><span>Accessibilité</span><span>Design System</span><span>Animations</span><span>Qualité</span><span>Reliability</span><span>Performance</span></div></div>
+
+      <!-- PROJECTS -->
+      <section id="projets" class="section" aria-labelledby="proj-h">
+        <div class="section-head">
+          <h2 id="proj-h">Projets sélectionnés</h2>
+          <p>Impact réel, solutions pragmatiques — HealthSphere, SafeCore, e‑commerce et plus.</p>
+        </div>
+        <div class="projects reveal">
+          <article class="project tilt">
+            <div class="thumb"><img src="WhatsApp Image 2025-04-03 à 09.59.39_a3f72db8.jpg" alt="HealthSphere"></div>
+            <div class="meta">
+              <h3>HealthSphere</h3>
+              <p>Plateforme de sensibilisation (articles, quiz, suivi personnalisé). Identité bleu/vert, accessibilité, SEO technique.</p>
+              <div class="tags"><span>React</span><span>Node</span><span>Design System</span></div>
+            </div>
+          </article>
+
+          <article class="project tilt">
+            <div class="thumb"><img src="https://images.unsplash.com/photo-1501045661006-fcebe0257c3f?q=80&w=1200&auto=format&fit=crop" alt="SafeCore"></div>
+            <div class="meta">
+              <h3>SafeCore — Alerte incendie</h3>
+              <p>Capteurs → alertes géolocalisées vers app web & mobile. Temps réel, tableau de bord opérationnel.</p>
+              <div class="tags"><span>Flutter</span><span>Firebase</span><span>WebSockets</span></div>
+            </div>
+          </article>
+
+          <article class="project tilt">
+            <div class="thumb"><img src="https://images.unsplash.com/photo-1513198364-058f1a45c55c?q=80&w=1200&auto=format&fit=crop" alt="Ecommerce"></div>
+            <div class="meta">
+              <h3>Boutique Moderne</h3>
+              <p>Store PWA, panier, recommandations et optimisation Lighthouse 90+.</p>
+              <div class="tags"><span>React</span><span>PWA</span><span>CI</span></div>
+            </div>
+          </article>
+
+          <article class="project tilt">
+            <div class="thumb"><img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop" alt="Flutter Lab"></div>
+            <div class="meta">
+              <h3>Flutter Lab</h3>
+              <p>Prototype → app, patterns Riverpod, tests et CI pour applications mobiles fiables.</p>
+              <div class="tags"><span>Flutter</span><span>Dart</span><span>Testing</span></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section id="competences" class="section alt" aria-labelledby="skills-h">
+        <div class="section-head"><h2 id="skills-h">Compétences</h2><p>Stack moderne & bonnes pratiques.</p></div>
+        <div class="skills reveal" id="ppp">
+          <div class="skill">HTML5</div>
+          <div class="skill">CSS3</div>
+          <div class="skill">JavaScript</div>
+          <div class="skill">React</div>
+          <div class="skill">Flutter</div>
+          <div class="skill">Node.js</div>
+          <div class="skill">MongoDB</div>
+          <div class="skill">Firebase</div>
+          <div class="skill">Python</div>
+          <div class="skill">R</div>
+          <div class="skill">Figma</div>
+          <div class="skill">UI/UX</div>
+        </div>
+      </section>
+
+      <!-- LAB -->
+      <section id="lab" class="section" aria-labelledby="lab-h">
+        <div class="section-head"><h2 id="lab-h">Lab & Partages</h2><p>Articles courts et astuces techniques.</p></div>
+        <div class="lab-grid reveal">
+          <article class="lab">
+            <h4>Design pour faibles connexions</h4>
+            <p>Images adaptatives, cache local, retries intelligents — prêt pour la RDC.</p>
+          </article>
+          <article class="lab">
+            <h4>Riverpod: patterns qui tiennent</h4>
+            <p>Structure d'état testable et scalable pour apps Flutter.</p>
+          </article>
+          <article class="lab">
+            <h4>Data pour décisions</h4>
+            <p>KPIs actionnables, UX de la donnée, dashboards clairs.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- TESTIMONIALS -->
+      <section id="temoignages" class="section alt" aria-labelledby="test-h">
+        <div class="section-head"><h2 id="test-h">Ils témoignent</h2><p>Retours clients.</p></div>
+        <div class="testimonials reveal">
+          <div class="tcard"><blockquote>« Dan apporte de la clarté, du calme et une vraie culture produit. »</blockquote><small>— A. Mbayo</small></div>
+          <div class="tcard"><blockquote>« Le souci du détail et l’accessibilité n’étaient pas négociables. Pari tenu. »</blockquote><small>— S. Lwamba</small></div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="section" aria-labelledby="cont-h">
+        <div class="section-head"><h2 id="cont-h">Contact</h2><p>Une idée ? Discutons-en.</p></div>
+        <form class="contact-form" onsubmit="event.preventDefault(); alert('Merci Dan — message simulé envoyé !');">
+          <div class="row">
+            <input class="input" type="text" placeholder="Votre nom" required />
+            <input class="input" type="email" placeholder="Votre email" required />
+          </div>
+          <textarea placeholder="Votre message" required></textarea>
+          <div class="form-actions">
+            <button class="btn primary" type="submit">Envoyer</button>
+            <a class="btn ghost" href="#" onclick="alert('Remplacez par un lien de téléchargement de CV si besoin')">Télécharger mon CV</a>
+          </div>
+        </form>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="container footer" role="contentinfo">
+    <div>© <span id="year"></span> Dan Lwamba — Construit avec ♥ à Kinshasa</div>
+    <div><a href="#top" style="color:var(--muted);text-decoration:none">↑ Haut</a></div>
+  </footer>
+
+<script>
+/* =========================
+   Minimal JS: theme, tilt, reveal, widgets, interactions
+   ========================= */
+(() => {
+  const root = document.documentElement;
+  const themeBtn = document.getElementById('themeToggle');
+  const yearEl = document.getElementById('year');
+  yearEl.textContent = new Date().getFullYear();
+
+  // Load saved theme
+  const saved = localStorage.getItem('theme');
+  if(saved === 'light') root.classList.add('light');
+
+  const setIcon = () => themeBtn.textContent = root.classList.contains('light') ? '☀︎' : '☾';
+  setIcon();
+  themeBtn.addEventListener('click', () => {
+    root.classList.toggle('light');
+    localStorage.setItem('theme', root.classList.contains('light') ? 'light' : 'dark');
+    setIcon();
+  });
+
+  // Reveal on scroll
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  }, {threshold:.12});
+  revealEls.forEach(el => io.observe(el));
+
+  // Simple tilt effect
+  function bindTilt(el, power=10){
+    let rect;
+    el.addEventListener('mousemove', (ev) => {
+      rect = rect || el.getBoundingClientRect();
+      const x = (ev.clientX - rect.left) / rect.width - 0.5;
+      const y = (ev.clientY - rect.top) / rect.height - 0.5;
+      el.style.transform = `perspective(800px) rotateY(${x*power}deg) rotateX(${ -y*power }deg) translateZ(8px)`;
+    });
+    el.addEventListener('mouseleave', ()=> { el.style.transform=''; rect=null; });
+  }
+  document.querySelectorAll('.tilt').forEach(el => bindTilt(el, 8));
+
+  // Magnetic buttons
+  document.querySelectorAll('.magnet').forEach(btn=>{
+    btn.addEventListener('mousemove', e => {
+      const r = btn.getBoundingClientRect();
+      const x = (e.clientX - r.left - r.width/2) * 0.06;
+      const y = (e.clientY - r.top - r.height/2) * 0.08;
+      btn.style.transform = `translate(${x}px, ${y}px)`;
+    });
+    btn.addEventListener('mouseleave', ()=> btn.style.transform='');
+  });
+
+  // Deck parallax
+  const deck = document.querySelector('.deck');
+  if(deck){
+    window.addEventListener('mousemove', e => {
+      const x = (e.clientX / innerWidth - 0.5) * 6;
+      const y = (e.clientY / innerHeight - 0.5) * -6;
+      deck.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
+    }, {passive:true});
+  }
+
+  // Simple type effect for hero (dynamic tagline)
+  (function typeEffect(){
+    const targets = ["Dan Lwamba", "Développeur Web", "Créateur d'applications", "Apprenti Data Scientist"];
+    let i=0, letter=0, deleting=false;
+    const el = document.createElement('span'); el.className='typed'; document.querySelector('.title').after(document.createElement('div')).previousSibling.appendChild(el);
+    el.style.display='block'; el.style.marginTop='8px'; el.style.color='var(--muted)';
+    function tick(){
+      const word = targets[i%targets.length];
+      el.textContent = word.slice(0, letter);
+      if(!deleting){
+        if(letter++ < word.length) setTimeout(tick, 80);
+        else { deleting=true; setTimeout(tick, 900); }
+      } else {
+        if(letter-->0) setTimeout(tick, 40);
+        else { deleting=false; i++; setTimeout(tick, 200); }
+      }
+    }
+    tick();
+  })();
+
+  // Stoic & Verse widgets (local arrays)
+  const stoic = [
+    {q:"Tu as pouvoir sur ton esprit, pas sur les événements.", a:"Marc Aurèle"},
+    {q:"Ce n’est pas ce qui t’arrive, mais la manière dont tu y réagis.", a:"Épictète"},
+    {q:"La tranquillité commence quand cesse la peur du futur.", a:"Sénèque"},
+    {q:"La première règle : garder un esprit calme.", a:"Marc Aurèle"}
+  ];
+  const verses = [
+    {r:"Psaume 27:1", t:"L'Éternel est ma lumière et mon salut; de qui aurais-je crainte?"},
+    {r:"Matthieu 5:16", t:"Que votre lumière luise ainsi devant les hommes."},
+    {r:"Ésaïe 41:10", t:"Ne crains rien, car je suis avec toi."},
+    {r:"Proverbes 3:5", t:"Confie-toi en l'Éternel de tout ton cœur."}
+  ];
+  (function renderWidgets(){
+    const s = stoic[Math.floor(Math.random()*stoic.length)];
+    const v = verses[Math.floor(Math.random()*verses.length)];
+    const stoicEl = document.getElementById('stoicWidget');
+    stoicEl.querySelector('.w-body').textContent = `“${s.q}”`;
+    stoicEl.querySelector('.w-meta').textContent = `— ${s.a}`;
+    const verseEl = document.getElementById('verseWidget');
+    verseEl.querySelector('.w-body').textContent = `“${v.t}”`;
+    verseEl.querySelector('.w-meta').textContent = v.r;
+  })();
+
+  // Small accessibility: focus visible for keyboard
+  document.addEventListener('keyup', (e)=> { if(e.key==='Tab') document.body.classList.add('show-focus'); });
+})();
+</script>
+</body>
+</html>
